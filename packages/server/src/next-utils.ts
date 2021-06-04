@@ -242,13 +242,13 @@ export function customServerExists() {
 
 interface CustomServerOptions {
   watch?: boolean
+  buildOnly?: boolean
 }
 
 export function startCustomServer(
   cwd: string,
   config: ServerConfig,
-  {watch}: CustomServerOptions = {},
-  buildOnly: boolean = false,
+  {watch, buildOnly}: CustomServerOptions = {},
 ) {
   const serverSrcPath = getCustomServerPath()
   const serverBuildPath = getCustomServerBuildPath()

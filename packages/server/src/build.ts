@@ -39,7 +39,7 @@ export async function build(config: ServerConfig) {
   await nextBuild(nextBin, buildFolder, manifest, config)
 
   try {
-    await startCustomServer(rootFolder, config, {watch}, true)
+    await startCustomServer(rootFolder, config, {watch, buildOnly: true})
   } catch (e) {
     console.log("No custom server found, proceeding")
   }
